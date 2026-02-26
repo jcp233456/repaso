@@ -89,6 +89,7 @@ namespace repaso
             empleadoslist.Add(nuevoempleado);
             GuardarEmpleado();
             mostrar();
+            //w
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
