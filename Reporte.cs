@@ -6,16 +6,14 @@ using System.Threading.Tasks;
 
 namespace repaso
 {
-    internal class empleado
+    internal class Reporte
     {
         string nombre;
-        int noempleado;
         string apellido;
-        decimal sueldoxhora;
+        decimal sueldoMes;
 
         public string Nombre { get => nombre; set => nombre = value; }
-        public int Numeroempleado { get => noempleado; set => noempleado = value; }
         public string Apellido { get => apellido; set => apellido = value; }
-        public decimal Sueldoxhora { get => sueldoxhora; set => sueldoxhora = value; }
+        public decimal SueldoMes { get => sueldoMes; set => sueldoMes = value; }
     }
 }

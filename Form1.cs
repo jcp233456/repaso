@@ -14,11 +14,37 @@ namespace repaso
     public partial class Form1 : Form
     {
         List<empleado> empleadoslist = new List<empleado>();
+        List<Asistencia>asistencias=new List<Asistencia>();
+        List<Reporte>reportes=new List<Reporte>();
         public Form1()
         {
             InitializeComponent();
             LeerEmpleado();
+            LeerAsistencia();
             mostrar();
+        }
+        private void LeerAsistencia()
+        {
+            string fileName = "Asistencia.txt";
+
+
+            FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+            StreamReader reader = new StreamReader(stream);
+
+
+            while (reader.Peek() > -1)
+
+            {
+                Asistencia asistencia=new Asistencia();
+                asistencia.NoEmpleado=Convert.ToInt16(reader.ReadLine());
+                asistencia.Horastrabajadas= Convert.ToInt16(reader.ReadLine());
+                asistencia.Mes= Convert.ToInt16(reader.ReadLine());
+                asistencias.Add(asistencia);
+            }
+
+            reader.Close();
+            mostrar();
+
         }
 
         private void LeerEmpleado()
@@ -38,7 +64,7 @@ namespace repaso
                 leerempleado.Numeroempleado = Convert.ToInt16(reader.ReadLine());
                 leerempleado.Nombre = reader.ReadLine();
                 leerempleado.Apellido = reader.ReadLine();
-                leerempleado.Sueldoxhora = Convert.ToDecimal(reader.ReadLine());
+                leerempleado.Sueldoxhora = Convert.ToInt16(reader.ReadLine());
 
                 empleadoslist.Add(leerempleado);
             }
@@ -51,6 +77,12 @@ namespace repaso
         {
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = empleadoslist;
+            //REPORTES
+            dataGridView2.DataSource = null;
+            dataGridView2.DataSource = reportes;
+
+            dataGridView3.DataSource = null;
+            dataGridView3.DataSource = asistencias;
         }
 
         private void GuardarEmpleado()
@@ -93,6 +125,33 @@ namespace repaso
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void buttonReporte_Click(object sender, EventArgs e)
+        {
+
+            foreach (var empleado in empleadoslist)
+            {
+                foreach (var asistencia in asistencias)
+                {
+                    if (empleado.Numeroempleado == asistencia.NoEmpleado)
+                    {
+                        Reporte reporte = new Reporte();
+                        reporte.Nombre = empleado.Nombre;
+                        reporte.Apellido = empleado.Apellido;
+                        reporte.SueldoMes = empleado.Sueldoxhora * asistencia.Horastrabajadas;
+                        reportes.Add(reporte);
+                    }
+                }
+            }
+            mostrar();
+        }
+
+        
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }
