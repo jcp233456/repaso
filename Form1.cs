@@ -19,9 +19,7 @@ namespace repaso
         public Form1()
         {
             InitializeComponent();
-            LeerEmpleado();
-            LeerAsistencia();
-            mostrar();
+
         }
         private void LeerAsistencia()
         {
@@ -43,7 +41,7 @@ namespace repaso
             }
 
             reader.Close();
-            mostrar();
+            showAsistencia();
 
         }
 
@@ -64,7 +62,7 @@ namespace repaso
                 leerempleado.Numeroempleado = Convert.ToInt16(reader.ReadLine());
                 leerempleado.Nombre = reader.ReadLine();
                 leerempleado.Apellido = reader.ReadLine();
-                leerempleado.Sueldoxhora = Convert.ToInt16(reader.ReadLine());
+                leerempleado.Sueldoxhora = Convert.ToDecimal(reader.ReadLine());
 
                 empleadoslist.Add(leerempleado);
             }
@@ -75,14 +73,20 @@ namespace repaso
         }
         private void mostrar()
         {
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = empleadoslist;
-            //REPORTES
-            dataGridView2.DataSource = null;
-            dataGridView2.DataSource = reportes;
+            dataGridViewEmpleados.DataSource = null;
+            dataGridViewEmpleados.DataSource = empleadoslist;
+        }
+        private void showAsistencia()
+        {
+            dataGridViewAsistencia.DataSource = null;
+            dataGridViewAsistencia.DataSource = asistencias;
 
-            dataGridView3.DataSource = null;
-            dataGridView3.DataSource = asistencias;
+        }
+
+        private void showReporte()
+        {
+            dataGridViewReporte.DataSource = null;
+            dataGridViewReporte.DataSource = reportes;
         }
 
         private void GuardarEmpleado()
@@ -152,13 +156,41 @@ namespace repaso
                     }
                 }
             }
-            mostrar();
+            showReporte();
         }
 
         
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Asistencia asistencia = new Asistencia();
+            asistencia.NoEmpleado = Convert.ToInt16(numericEmpleadoAsistencia.Value);
+            asistencia.Horastrabajadas = Convert.ToInt16(numericHorasTrabajadasAsistencia.Value);
+            asistencia.Mes = Convert.ToInt16(numericMesAsistencia.Value);
+            asistencias.Add(asistencia);
+            GuardarAsistencia();
+            showAsistencia();
+            
+
+
+        }
+
+        private void GuardarAsistencia()
+        {
+            FileStream stream = new FileStream("Asistencia.txt", FileMode.Create, FileAccess.Write);
+
+            StreamWriter writer = new StreamWriter(stream);
+
+            foreach (var item in asistencias)
+            {
+                writer.WriteLine(item.NoEmpleado);
+                writer.WriteLine(item.Horastrabajadas);
+                writer.WriteLine(item.Mes);
+
+            }
+
+            writer.Close();
+            showAsistencia();
 
         }
     }

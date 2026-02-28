@@ -31,7 +31,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.buttonEmpleado = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewEmpleados = new System.Windows.Forms.DataGridView();
             this.numericSueldo = new System.Windows.Forms.NumericUpDown();
             this.textBoxApellido = new System.Windows.Forms.TextBox();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
@@ -42,19 +42,28 @@
             this.labelNumEmpleado = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewAsistencia = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.buttonReporte = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewReporte = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.numericEmpleadoAsistencia = new System.Windows.Forms.NumericUpDown();
+            this.numericHorasTrabajadasAsistencia = new System.Windows.Forms.NumericUpDown();
+            this.numericMesAsistencia = new System.Windows.Forms.NumericUpDown();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericSueldo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericEmpleado)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAsistencia)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReporte)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericEmpleadoAsistencia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericHorasTrabajadasAsistencia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericMesAsistencia)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -71,7 +80,7 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.buttonEmpleado);
-            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.dataGridViewEmpleados);
             this.tabPage1.Controls.Add(this.numericSueldo);
             this.tabPage1.Controls.Add(this.textBoxApellido);
             this.tabPage1.Controls.Add(this.textBoxNombre);
@@ -98,16 +107,16 @@
             this.buttonEmpleado.UseVisualStyleBackColor = true;
             this.buttonEmpleado.Click += new System.EventHandler(this.buttonEmpleado_Click);
             // 
-            // dataGridView1
+            // dataGridViewEmpleados
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(481, 44);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(502, 261);
-            this.dataGridView1.TabIndex = 8;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridViewEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewEmpleados.Location = new System.Drawing.Point(481, 44);
+            this.dataGridViewEmpleados.Name = "dataGridViewEmpleados";
+            this.dataGridViewEmpleados.RowHeadersWidth = 51;
+            this.dataGridViewEmpleados.RowTemplate.Height = 24;
+            this.dataGridViewEmpleados.Size = new System.Drawing.Size(502, 261);
+            this.dataGridViewEmpleados.TabIndex = 8;
+            this.dataGridViewEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // numericSueldo
             // 
@@ -176,8 +185,14 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.numericMesAsistencia);
+            this.tabPage2.Controls.Add(this.numericHorasTrabajadasAsistencia);
+            this.tabPage2.Controls.Add(this.numericEmpleadoAsistencia);
+            this.tabPage2.Controls.Add(this.label3);
+            this.tabPage2.Controls.Add(this.label2);
+            this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.dataGridView3);
+            this.tabPage2.Controls.Add(this.dataGridViewAsistencia);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -196,20 +211,20 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dataGridView3
+            // dataGridViewAsistencia
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(115, 6);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersWidth = 51;
-            this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.Size = new System.Drawing.Size(761, 342);
-            this.dataGridView3.TabIndex = 0;
+            this.dataGridViewAsistencia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAsistencia.Location = new System.Drawing.Point(6, 6);
+            this.dataGridViewAsistencia.Name = "dataGridViewAsistencia";
+            this.dataGridViewAsistencia.RowHeadersWidth = 51;
+            this.dataGridViewAsistencia.RowTemplate.Height = 24;
+            this.dataGridViewAsistencia.Size = new System.Drawing.Size(494, 324);
+            this.dataGridViewAsistencia.TabIndex = 0;
             // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.buttonReporte);
-            this.tabPage3.Controls.Add(this.dataGridView2);
+            this.tabPage3.Controls.Add(this.dataGridViewReporte);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(989, 465);
@@ -227,15 +242,63 @@
             this.buttonReporte.UseVisualStyleBackColor = true;
             this.buttonReporte.Click += new System.EventHandler(this.buttonReporte_Click);
             // 
-            // dataGridView2
+            // dataGridViewReporte
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(22, 21);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(905, 315);
-            this.dataGridView2.TabIndex = 0;
+            this.dataGridViewReporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewReporte.Location = new System.Drawing.Point(21, 26);
+            this.dataGridViewReporte.Name = "dataGridViewReporte";
+            this.dataGridViewReporte.RowHeadersWidth = 51;
+            this.dataGridViewReporte.RowTemplate.Height = 24;
+            this.dataGridViewReporte.Size = new System.Drawing.Size(905, 315);
+            this.dataGridViewReporte.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(617, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 16);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "No empleado";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(617, 136);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 16);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Horas trabajadas";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(617, 275);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(33, 16);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Mes";
+            // 
+            // numericEmpleadoAsistencia
+            // 
+            this.numericEmpleadoAsistencia.Location = new System.Drawing.Point(786, 35);
+            this.numericEmpleadoAsistencia.Name = "numericEmpleadoAsistencia";
+            this.numericEmpleadoAsistencia.Size = new System.Drawing.Size(146, 22);
+            this.numericEmpleadoAsistencia.TabIndex = 5;
+            // 
+            // numericHorasTrabajadasAsistencia
+            // 
+            this.numericHorasTrabajadasAsistencia.Location = new System.Drawing.Point(786, 130);
+            this.numericHorasTrabajadasAsistencia.Name = "numericHorasTrabajadasAsistencia";
+            this.numericHorasTrabajadasAsistencia.Size = new System.Drawing.Size(146, 22);
+            this.numericHorasTrabajadasAsistencia.TabIndex = 6;
+            // 
+            // numericMesAsistencia
+            // 
+            this.numericMesAsistencia.Location = new System.Drawing.Point(772, 273);
+            this.numericMesAsistencia.Name = "numericMesAsistencia";
+            this.numericMesAsistencia.Size = new System.Drawing.Size(146, 22);
+            this.numericMesAsistencia.TabIndex = 7;
             // 
             // Form1
             // 
@@ -249,13 +312,17 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericSueldo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericEmpleado)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAsistencia)).EndInit();
             this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReporte)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericEmpleadoAsistencia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericHorasTrabajadasAsistencia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericMesAsistencia)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -270,16 +337,22 @@
         private System.Windows.Forms.Label labelNombre;
         private System.Windows.Forms.Label labelNumEmpleado;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewEmpleados;
         private System.Windows.Forms.NumericUpDown numericSueldo;
         private System.Windows.Forms.TextBox textBoxApellido;
         private System.Windows.Forms.TextBox textBoxNombre;
         private System.Windows.Forms.NumericUpDown numericEmpleado;
         private System.Windows.Forms.Button buttonEmpleado;
         private System.Windows.Forms.Button buttonReporte;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dataGridViewReporte;
+        private System.Windows.Forms.DataGridView dataGridViewAsistencia;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.NumericUpDown numericMesAsistencia;
+        private System.Windows.Forms.NumericUpDown numericHorasTrabajadasAsistencia;
+        private System.Windows.Forms.NumericUpDown numericEmpleadoAsistencia;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
 
