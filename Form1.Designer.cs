@@ -101,16 +101,17 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(515, 44);
+            this.dataGridView1.Location = new System.Drawing.Point(481, 44);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(450, 261);
+            this.dataGridView1.Size = new System.Drawing.Size(502, 261);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // numericSueldo
             // 
+            this.numericSueldo.DecimalPlaces = 2;
             this.numericSueldo.Location = new System.Drawing.Point(259, 283);
             this.numericSueldo.Name = "numericSueldo";
             this.numericSueldo.Size = new System.Drawing.Size(189, 22);

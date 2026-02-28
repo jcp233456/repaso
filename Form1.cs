@@ -107,6 +107,11 @@ namespace repaso
         private void Form1_Load(object sender, EventArgs e)
         {
 
+            LeerEmpleado();
+            LeerAsistencia();
+            mostrar();
+            numericEmpleado.Value = empleadoslist.Count + 1;
+
         }
 
         private void buttonEmpleado_Click(object sender, EventArgs e)
@@ -142,6 +147,7 @@ namespace repaso
                         reporte.Nombre = empleado.Nombre;
                         reporte.Apellido = empleado.Apellido;
                         reporte.SueldoMes = empleado.Sueldoxhora * asistencia.Horastrabajadas;
+                        reporte.Mes = asistencia.Mes;
                         reportes.Add(reporte);
                     }
                 }
